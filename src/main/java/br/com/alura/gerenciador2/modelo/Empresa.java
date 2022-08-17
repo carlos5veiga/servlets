@@ -1,4 +1,4 @@
-package br.com.alura.gerenciador2.servlet;
+package br.com.alura.gerenciador2.modelo;
 
 import java.util.Date;
 
