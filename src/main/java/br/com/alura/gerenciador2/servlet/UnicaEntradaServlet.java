@@ -19,8 +19,8 @@ public class UnicaEntradaServlet extends HttpServlet {
 		
 		String paramAcao = request.getParameter("acao");
 		
-		//Para não usar os if-else para determinar qual classe foi passada em ação
-		//Cria´se este modelo genérico
+		//Para nï¿½o usar os if-else para determinar qual classe foi passada em aï¿½ï¿½o
+		//Criaï¿½se este modelo genï¿½rico
 		
 		String nomeDaClasse = "br.com.alura.grenciador2.acao." + paramAcao; //Nome completo da classe
 		
@@ -29,7 +29,7 @@ public class UnicaEntradaServlet extends HttpServlet {
 		try {
 			Class classe = Class.forName(nomeDaClasse); // Cria a classe
 			Object obj = classe.newInstance(); // Cria um objeto da classe
-			Acao acao = (Acao) obj; // Cast necessário para que executa possa ser chamado.
+			Acao acao = (Acao) obj; // Cast necessï¿½rio para que executa possa ser chamado.
 			nome = acao.executa(request, response);
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException
 				| IOException e) {
@@ -46,7 +46,7 @@ public class UnicaEntradaServlet extends HttpServlet {
 			response.sendRedirect(splitRetorno[1]);
 		}	
 		
-//		Solução antiga testando cada classe passada em Acao
+//		Soluï¿½ï¿½o antiga testando cada classe passada em Acao
 //		if (paramAcao.equals("ListaEmpresas")) {
 //			
 //			ListaEmpresas acao = new ListaEmpresas();
@@ -76,7 +76,6 @@ public class UnicaEntradaServlet extends HttpServlet {
 //			
 //			NovaEmpresaForm acao = new NovaEmpresaForm();
 //			nome = acao.executa(request, response);
-//			Teste para ssh
 //		}
 		
 	}
