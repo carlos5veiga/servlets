@@ -8,8 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import br.com.alura.grenciador2.acao.Acao;
+import br.com.alura.gerenciador2.acao.Acao;
 
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
@@ -17,12 +18,18 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession sessao = request.getSession();
+		boolean usuarioNaoEstaLogado = sessao.getAttribute("usuarioLogado") == null;
+		if(usuarioNaoEstaLogado) {
+			response.sendRedirect("entrada?acao=LoginForm");
+		}
+		
 		String paramAcao = request.getParameter("acao");
 		
-		//Para n�o usar os if-else para determinar qual classe foi passada em a��o
-		//Cria�se este modelo gen�rico
+		//Para nao usar os if-else para determinar qual classe foi passada em acao
+		//Cria-se este modelo generico
 		
-		String nomeDaClasse = "br.com.alura.grenciador2.acao." + paramAcao; //Nome completo da classe
+		String nomeDaClasse = "br.com.alura.gerenciador2.acao." + paramAcao; //Nome completo da classe
 		
 		
 		String nome;

@@ -1,11 +1,8 @@
-package br.com.alura.grenciador2.acao;
+package br.com.alura.gerenciador2.acao;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -16,11 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador2.modelo.Banco;
 import br.com.alura.gerenciador2.modelo.Empresa;
 
-public class NovaEmpresaForm implements Acao {
+public class MostraEmpresa implements Acao {
 	
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		return "forward:formNovaEmpresa.jsp";
+		System.out.println("Mostrando os dados empresas");
+		
+		String paramId = request.getParameter("id");
+		Integer id = Integer.valueOf(paramId);
+		
+		Banco banco = new Banco();
+		Empresa empresa = banco.buscaEmpresaPeloId(id);
+		
+		request.setAttribute("empresa", empresa);
+		
+		return "forward:formAlteraEmpresa.jsp";
 		
 	}
 

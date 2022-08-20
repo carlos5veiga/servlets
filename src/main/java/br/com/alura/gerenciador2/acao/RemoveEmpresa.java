@@ -1,4 +1,4 @@
-package br.com.alura.grenciador2.acao;
+package br.com.alura.gerenciador2.acao;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;

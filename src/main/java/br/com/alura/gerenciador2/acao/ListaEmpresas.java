@@ -1,4 +1,4 @@
-package br.com.alura.grenciador2.acao;
+package br.com.alura.gerenciador2.acao;
 
 import java.io.IOException;
 import java.net.http.HttpRequest;
@@ -9,6 +9,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.alura.gerenciador2.modelo.Banco;
 import br.com.alura.gerenciador2.modelo.Empresa;
