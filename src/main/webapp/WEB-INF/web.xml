@@ -9,4 +9,32 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  
+  <filter>
+  	<filter-name>MonitFilter</filter-name>
+  	<filter-class>br.com.alura.gerenciador2.servlet.MonitoramentoFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>MonitFilter</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>AutFilter</filter-name>
+  	<filter-class>br.com.alura.gerenciador2.servlet.AutorizacaoFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>AutFilter</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>ContFilter</filter-name>
+  	<filter-class>br.com.alura.gerenciador2.servlet.ControladorFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>ContFilter</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+
 </web-app>
