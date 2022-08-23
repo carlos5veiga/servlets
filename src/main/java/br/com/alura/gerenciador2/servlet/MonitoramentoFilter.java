@@ -11,7 +11,6 @@ import javax.servlet.ServletResponse;
 //@WebFilter("/entrada")
 public class MonitoramentoFilter implements Filter {
 
-	@Override
 	public void init() throws ServletException {}
        
 	@Override
